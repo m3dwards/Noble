@@ -52,6 +52,7 @@
     </Reference>
     <Reference Include="xunit">
       <HintPath>..\packages\xunit.1.7.0.1540\lib\xunit.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -64,14 +65,14 @@
     <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Noble\Noble.csproj">
       <Project>{AE97DBAB-ADD0-40A6-99EB-B81A7D5434E6}</Project>
       <Name>Noble</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
