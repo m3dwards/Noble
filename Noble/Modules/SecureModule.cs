@@ -15,6 +15,7 @@
             {
                 var model = new UserModel(Context.CurrentUser.UserName);
                 return View["secure.cshtml", model];
+
             };
         }
     }
