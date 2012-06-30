@@ -11,5 +11,6 @@ namespace Noble
         public string UserName { get; set; }
 
         public IEnumerable<string> Claims { get; set; }
+
     }
 }
