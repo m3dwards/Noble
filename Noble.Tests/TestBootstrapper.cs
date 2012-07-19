@@ -23,9 +23,12 @@ namespace Noble.Tests
 
                 var rootPath =
                     PathHelper.GetParent(assemblyPath, 3);
+                
+                rootPath =
+                    Path.Combine(rootPath, @"_PublishedWebsites");
 
-                //rootPath =
-                //    Path.Combine(rootPath, @"Noble");
+                rootPath =
+                    Path.Combine(rootPath, @"Noble");
 
                 FakeRootPathProvider.RootPath = assemblyPath;
 
