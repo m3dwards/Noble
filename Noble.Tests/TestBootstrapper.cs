@@ -31,7 +31,7 @@ namespace Noble.Tests
                 rootPath =
                     Path.Combine(rootPath, @"Noble");
 
-                FakeRootPathProvider.RootPath = assemblyPath;
+                FakeRootPathProvider.RootPath = rootPath;
 
                 return typeof(FakeRootPathProvider);
             }
