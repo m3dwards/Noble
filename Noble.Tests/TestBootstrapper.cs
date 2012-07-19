@@ -21,8 +21,9 @@ namespace Noble.Tests
                 var assemblyPath =
                     Path.GetDirectoryName(assemblyFilePath);
 
-                var rootPath =
-                    PathHelper.GetParent(assemblyPath, 3);
+                
+                var rootPath = "";
+                //    PathHelper.GetParent(assemblyPath, 3);
                 
                 rootPath =
                     Path.Combine(rootPath, @"_PublishedWebsites");
