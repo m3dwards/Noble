@@ -21,15 +21,17 @@ namespace Noble.Tests
                 var assemblyPath =
                     Path.GetDirectoryName(assemblyFilePath);
 
-                
                 var rootPath = "";
-                //    PathHelper.GetParent(assemblyPath, 3);
-                
-                rootPath =
-                    Path.Combine(rootPath, @"_PublishedWebsites");
+                if (System.Configuration.ConfigurationManager.AppSettings["Environment"] == "Debug")
+                {
+                    rootPath = PathHelper.GetParent(assemblyPath, 3);
+                }
+                else
+                {
+                    rootPath = Path.Combine(rootPath, @"_PublishedWebsites");
+                }
 
-                rootPath =
-                    Path.Combine(rootPath, @"Noble");
+                rootPath = Path.Combine(rootPath, @"Noble");
 
                 FakeRootPathProvider.RootPath = rootPath;
 
