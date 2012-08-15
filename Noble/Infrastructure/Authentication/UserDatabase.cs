@@ -9,6 +9,8 @@ namespace Noble
 
     using Nancy.Authentication.Forms;
 
+    using Noble.Models;
+
     public class UserDatabase : IUserMapper
     {
         private static List<Tuple<string, string, Guid>> users = new List<Tuple<string, string, Guid>>();
@@ -19,8 +21,11 @@ namespace Noble
             users.Add(new Tuple<string, string, Guid>("user", "password", new Guid("56E1E49E-B7E8-4EEA-8459-7A906AC4D4C0")));
         }
 
+ 
+
         public IUserIdentity GetUserFromIdentifier(Guid identifier, NancyContext context)
         {
+
             var userRecord = users.Where(u => u.Item3 == identifier).FirstOrDefault();
 
             return userRecord == null

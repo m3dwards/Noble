@@ -6,5 +6,13 @@
 <body>
     <h1>Welcome to Noble Notes!</h1>
     <a href="secure">Enter the "Secure Zone"!</a>
+    @foreach (var user in Model)
+    {
+        <div>@user.Username - @user.Id</div>
+    }
+
+    <form method="post">
+        <input type="submit" value="post" />
+    </form>
 </body>
 </html>
