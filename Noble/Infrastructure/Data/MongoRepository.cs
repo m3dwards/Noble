@@ -17,14 +17,12 @@ namespace Noble.Infrastructure.Data
 
     public class MongoRepository<T> : IRepository<T> where T : IModel
     {
-        private readonly MongoServer _server;
         private readonly MongoDatabase _database;
         private readonly MongoCollection<T> _collection;
 
         public MongoRepository()
         {
-            _server = MongoServer.Create(ConfigurationManager.AppSettings["MONGOHQ_URL"]);
-            _database = _server.GetDatabase(ConfigurationManager.AppSettings["DatabaseName"]);
+            _database = MongoDatabase.Create(ConfigurationManager.AppSettings["MONGOHQ_URL"]);
 
             var collectionName = GetCollectionName(typeof(T));
             _collection = _database.GetCollection<T>(collectionName);
